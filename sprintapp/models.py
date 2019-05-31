@@ -43,7 +43,7 @@ class Status_lkup(models.Model):
     
     class Meta:
         db_table='status'
-        verbose_name_plural='satati'
+        verbose_name_plural='stati'
 
 class Sprint(models.Model):
     sprintlabel=models.CharField(max_length=255)
