@@ -16,8 +16,8 @@ class Roles_lkup(models.Model):
 class Points_lkup(models.Model):
     storypoint=models.SmallIntegerField()
 
-    def __num__(self):
-        return self.storypoint
+    def __str__(self):
+        return str(self.storypoint)
     
     class Meta:
         db_table='point'
@@ -27,7 +27,7 @@ class Priority_lkup(models.Model):
     storypriority=models.CharField(max_length=255)
     storyprioritysort=models.SmallIntegerField()
 
-    def __num__(self):
+    def __str__(self):
         return self.storypriority
     
     class Meta:
@@ -38,7 +38,7 @@ class Status_lkup(models.Model):
     storystatus=models.CharField(max_length=255)
     storystatussort=models.SmallIntegerField()
 
-    def __num__(self):
+    def __str__(self):
         return self.storystatus
     
     class Meta:

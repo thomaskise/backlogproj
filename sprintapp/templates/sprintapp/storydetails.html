@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Story: {{ story.storytitle }}</h2>
+<p>
+    <strong>Story Points: </strong>{{ story.storyeffortpoints }}
+</p>
+<p>
+    <strong> Priority: </strong>{{ story.storypriority }}
+</p>
+<p>
+    <strong> Status: </strong>{{ story.storystatus }}
+</p>
+
+<!-- Future
+<p><strong>Total task hours: </strong>
+    {% for t in Task %}
+    #this doesn't work ... but doesn't break either
+         x += t.taskefforttime 
+    {% endfor %}
+    {{x}}
+</p> 
+-->
+
+<p><strong>Story: </strong> {{ story.storydetail }}</p>
+<table class='table'>
+    <tr>
+        <th>Task</th>
+        <th>Hours estimate</th>
+        <th>Assigned developer</th>
+    </tr>
+{% for t in task %}
+    <tr>
+        <td>{{ t.tasktitle }}</a></td>
+        <td>{{ t.taskefforttime }}</td>
+        <td>
+            {% for tm in Teammembermember.all %}
+                {{ tm.lastname}}
+            {% endfor %}
+        </td>
+    </tr>
+{% endfor %}
+
+{% endblock %}
