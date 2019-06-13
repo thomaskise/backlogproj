@@ -8,16 +8,18 @@
     <th>Points</th>
     <th>Assigned Sprint</th>
     <th>Status</th>
-    <th>Product Owner</th>
+    <th>Biz Stakeholder</th>
+    <th>Story Entered Date</th>
  </tr>
  {% for b in backlog %}
   <tr>
-    <td>{{ b.storytitle }}</td>
+    <td><a href="{% url 'storydetails' id=b.id %}">{{ b.storytitle }}</a></td>
     <td>{{ b.storypriority }}</td>
     <td>{{ b.storyeffortpoints }}</td>
     <td>{{ b.assignedsprint }}</td>
     <td>{{ b.storystatus }}</td>
     <td>{{ b.ownerproduct }}</td>
+    <td>{{ b.storyenterdate }}</td>
   </tr>
 
  {% endfor %}
